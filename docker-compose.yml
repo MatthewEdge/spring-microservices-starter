@@ -1,0 +1,52 @@
+version: '3'
+
+# Note: all Network Aliases follow the Kubernetes format for consistency between local and deployed urls
+
+services:
+
+  gateway:
+    build: 
+      context: ./gateway
+    environment:
+      JWT_SECRET: superSecret 
+      USER_SERVICE_URL: users.default.svc.cluster.local:8080
+    ports:
+      - "8080:8080"
+    networks:
+      app:
+        aliases:
+          - gateway.default.svc.cluster.local
+
+  users:
+    build: 
+      context: ./users
+    environment:
+      JWT_SECRET: superSecret 
+      DB_URL: userdb.default.svc.cluster.local
+      DB_PORT: 5432
+      DB_USER: postgres
+      DB_PASS: example
+    ports:
+      - "8081:8080"
+    networks:
+      app:
+        aliases:
+          - users.default.svc.cluster.local
+    depends_on:
+      - userdb
+
+  userdb:
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: example
+      POSTGRES_DB: app
+    ports:
+      - "5432:5432"
+    networks:
+      app:
+        aliases:
+          - userdb.default.svc.cluster.local
+
+networks:
+  app:

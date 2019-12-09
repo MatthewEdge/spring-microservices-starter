@@ -1,0 +1,44 @@
+version: '3'
+
+services:
+
+  elasticsearch:
+    build:
+      context: ./elasticsearch
+    ports:
+      - "9200:9200"
+      - "9300:9300"
+    environment:
+      ES_JAVA_OPTS: "-Xmx256m -Xms256m"
+      ELASTIC_PASSWORD: changeme
+    networks:
+      default:
+        aliases:
+          - elasticsearch.default.svc.cluster.local # Match Kube DNS name
+
+  logstash:
+    build:
+      context: ./logstash
+    ports:
+      - "5000:5000"
+      - "9600:9600"
+    environment:
+      LS_JAVA_OPTS: "-Xmx256m -Xms256m"
+    networks:
+      default:
+        aliases:
+          - logstash.default.svc.cluster.local # Match Kube DNS name
+    depends_on:
+      - elasticsearch
+
+  kibana:
+    build:
+      context: ./kibana
+    ports:
+      - "5601:5601"
+    networks:
+      default:
+        aliases:
+          - kibana.default.svc.cluster.local # Match Kube DNS name
+    depends_on:
+      - elasticsearch

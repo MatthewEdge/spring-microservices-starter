@@ -1,0 +1,61 @@
+# Requires the {{IMAGE_URL}} placeholder be replaced
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: elasticsearch
+  # annotations:
+    # service.beta.kubernetes.io/aws-load-balancer-ssl-cert: {{ELB_SSL_CERT_ARN}}
+    # service.beta.kubernetes.io/aws-load-balancer-extra-security-groups: {{ELB_SECURITY_GROUP_ID}}
+spec:
+  selector:
+    name: elasticsearch
+  # type: LoadBalancer
+  # loadBalancerSourceRanges:
+  #   - TODO
+  ports:
+    - name: http
+      port: 9200
+      targetPort: 9200
+    - name: tcp
+      port: 9300
+      targetPort: 9300
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: elasticsearch
+  labels:
+    name: elasticsearch
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      name: elasticsearch
+  template:
+    metadata:
+      labels:
+        name: elasticsearch
+    spec:
+      containers:
+        - name: elasticsearch
+          image: {{IMAGE_URL}}
+          imagePullPolicy: Always
+          resources:
+            requests:
+              memory: 512Mi
+            limits:
+              memory: 1Gi
+          ports:
+            - containerPort: 9200
+              name: http
+            - containerPort: 9300
+              name: tcp
+          env:
+            - name: ES_JAVA_OPTS
+              value: "-Xmx256m -Xms256m"
+            - name: ELASTIC_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: elasticsearch
+                  key: password

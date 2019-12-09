@@ -1,0 +1,27 @@
+version: '3'
+
+services:
+
+  prometheus:
+    build:
+      context: ./prometheus
+    ports:
+      - "9090:9090"
+    volumes:
+      - ./prometheus/prometheus-config.yml:/etc/prometheus/prometheus.yml:ro
+    networks:
+      default:
+        aliases:
+          - prometheus.default.svc.cluster.local # Match Kube DNS name
+
+  grafana:
+    build:
+      context: ./grafana
+    ports:
+      - "3000:3000"
+    networks:
+      default:
+        aliases:
+          - grafana.default.svc.cluster.local # Match Kube DNS name
+    depends_on:
+      - prometheus

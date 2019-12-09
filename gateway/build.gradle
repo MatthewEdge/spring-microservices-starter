@@ -1,0 +1,86 @@
+plugins {
+	id 'org.springframework.boot' version '2.2.1.RELEASE'
+	id 'io.spring.dependency-management' version '1.0.8.RELEASE'
+	id 'java'
+	id "com.diffplug.gradle.spotless" version "3.26.1"
+}
+
+dependencyManagement {
+	imports {
+		mavenBom "org.springframework.cloud:spring-cloud-dependencies:Hoxton.RELEASE"
+	}
+}
+
+group = 'io.medgelabs'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '11'
+
+configurations {
+	compileOnly {
+		extendsFrom annotationProcessor
+	}
+	developmentOnly
+    runtimeClasspath {
+        extendsFrom developmentOnly
+    }
+}
+
+// Adds: ./gradlew bootRunDev
+task bootRunDev {
+	bootRun.configure {
+		jvmArgs = ["-Dspring.profiles.active=dev", "-Dspring.output.ansi.enabled=ALWAYS"]
+	}
+
+	// Enable H2 to be used as a normal dependency in DEV
+	dependencies {
+		runtimeOnly 'com.h2database:h2'
+	}
+}
+bootRunDev.finalizedBy bootRun
+
+bootJar {
+	archiveFileName = "app.jar"
+}
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-security'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'com.auth0:java-jwt:3.8.2'
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	implementation 'org.postgresql:postgresql'
+	testImplementation 'com.h2database:h2'
+	implementation 'org.springframework.cloud:spring-cloud-starter-netflix-hystrix'
+	implementation 'org.springframework.cloud:spring-cloud-starter-netflix-zuul'
+	implementation 'org.springframework.cloud:spring-cloud-starter-openfeign'
+	implementation 'io.springfox:springfox-swagger2:2.9.2'
+	implementation 'org.springframework.boot:spring-boot-starter-actuator'
+	implementation 'io.micrometer:micrometer-registry-prometheus'
+	//implementation 'net.logstash.logback:logstash-logback-encoder:4.11'
+	compileOnly 'org.projectlombok:lombok'
+	annotationProcessor 'org.projectlombok:lombok'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	developmentOnly 'org.springframework.boot:spring-boot-devtools'
+}
+
+// Enable full exception logs in test
+test {
+	testLogging.showStandardStreams = true
+	testLogging.exceptionFormat = 'full'
+}
+
+// Code Formatting
+spotless {
+	java {
+		googleJavaFormat()
+		importOrder 'java', 'javax', 'org', 'com', 'io.medgelabs', ''
+		removeUnusedImports() // removes any unused imports
+	}
+}
+
+afterEvaluate {
+	tasks.getByName('compileJava').dependsOn(tasks.getByName('spotlessApply'))
+}

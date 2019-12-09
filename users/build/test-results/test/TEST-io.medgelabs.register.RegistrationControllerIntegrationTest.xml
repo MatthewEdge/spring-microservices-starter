@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="io.medgelabs.register.RegistrationControllerIntegrationTest" tests="2" skipped="0" failures="1" errors="0" timestamp="2019-12-08T04:55:29" hostname="mcbk.local" time="0.252">
+  <properties/>
+  <testcase name="itShould_AcceptRequests_WithValidInput" classname="io.medgelabs.register.RegistrationControllerIntegrationTest" time="0.213"/>
+  <testcase name="itShould_RejectRequests_WithInvalidUsername" classname="io.medgelabs.register.RegistrationControllerIntegrationTest" time="0.039">
+    <failure message="java.lang.AssertionError: No value at JSON path &quot;$.error&quot;" type="java.lang.AssertionError">java.lang.AssertionError: No value at JSON path &quot;$.error&quot;
+	at org.springframework.test.util.JsonPathExpectationsHelper.evaluateJsonPath(JsonPathExpectationsHelper.java:295)
+	at org.springframework.test.util.JsonPathExpectationsHelper.assertValueIsNotEmpty(JsonPathExpectationsHelper.java:231)
+	at org.springframework.test.web.servlet.result.JsonPathResultMatchers.lambda$isNotEmpty$6(JsonPathResultMatchers.java:162)
+	at org.springframework.test.web.servlet.MockMvc$1.andExpect(MockMvc.java:196)
+	at io.medgelabs.register.RegistrationControllerIntegrationTest.itShould_RejectRequests_WithInvalidUsername(RegistrationControllerIntegrationTest.java:36)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestExecutionCallbacks.evaluate(RunBeforeTestExecutionCallbacks.java:74)
+	at org.springframework.test.context.junit4.statements.RunAfterTestExecutionCallbacks.evaluate(RunAfterTestExecutionCallbacks.java:84)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestMethodCallbacks.evaluate(RunBeforeTestMethodCallbacks.java:75)
+	at org.springframework.test.context.junit4.statements.RunAfterTestMethodCallbacks.evaluate(RunAfterTestMethodCallbacks.java:86)
+	at org.springframework.test.context.junit4.statements.SpringRepeat.evaluate(SpringRepeat.java:84)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:251)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:97)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:190)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.runTestClass(JUnitTestClassExecutor.java:110)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:58)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:38)
+	at org.gradle.api.internal.tasks.testing.junit.AbstractJUnitTestClassProcessor.processTestClass(AbstractJUnitTestClassProcessor.java:62)
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.processTestClass(SuiteTestClassProcessor.java:51)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:35)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:32)
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:93)
+	at com.sun.proxy.$Proxy2.processTestClass(Unknown Source)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.processTestClass(TestWorker.java:118)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:35)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+	at org.gradle.internal.remote.internal.hub.MessageHubBackedObjectConnection$DispatchWrapper.dispatch(MessageHubBackedObjectConnection.java:175)
+	at org.gradle.internal.remote.internal.hub.MessageHubBackedObjectConnection$DispatchWrapper.dispatch(MessageHubBackedObjectConnection.java:157)
+	at org.gradle.internal.remote.internal.hub.MessageHub$Handler.run(MessageHub.java:404)
+	at org.gradle.internal.concurrent.ExecutorPolicy$CatchAndRecordFailures.onExecute(ExecutorPolicy.java:63)
+	at org.gradle.internal.concurrent.ManagedExecutorImpl$1.run(ManagedExecutorImpl.java:46)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at org.gradle.internal.concurrent.ThreadFactoryImpl$ManagedThreadRunnable.run(ThreadFactoryImpl.java:55)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+Caused by: java.lang.IllegalArgumentException: json can not be null or empty
+	at com.jayway.jsonpath.internal.Utils.notEmpty(Utils.java:386)
+	at com.jayway.jsonpath.JsonPath.read(JsonPath.java:342)
+	at com.jayway.jsonpath.JsonPath.read(JsonPath.java:329)
+	at org.springframework.test.util.JsonPathExpectationsHelper.evaluateJsonPath(JsonPathExpectationsHelper.java:292)
+	... 59 more
+</failure>
+  </testcase>
+  <system-out><![CDATA[23:55:17.979 [Test worker] DEBUG org.springframework.test.context.junit4.SpringJUnit4ClassRunner - SpringJUnit4ClassRunner constructor called with [class io.medgelabs.register.RegistrationControllerIntegrationTest]
+23:55:17.988 [Test worker] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating CacheAwareContextLoaderDelegate from class [org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate]
+23:55:17.995 [Test worker] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating BootstrapContext using constructor [public org.springframework.test.context.support.DefaultBootstrapContext(java.lang.Class,org.springframework.test.context.CacheAwareContextLoaderDelegate)]
+23:55:18.032 [Test worker] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating TestContextBootstrapper for test class [io.medgelabs.register.RegistrationControllerIntegrationTest] from class [org.springframework.boot.test.context.SpringBootTestContextBootstrapper]
+23:55:18.046 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Neither @ContextConfiguration nor @ContextHierarchy found for test class [io.medgelabs.register.RegistrationControllerIntegrationTest], using SpringBootContextLoader
+23:55:18.050 [Test worker] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [io.medgelabs.register.RegistrationControllerIntegrationTest]: class path resource [io/medgelabs/register/RegistrationControllerIntegrationTest-context.xml] does not exist
+23:55:18.050 [Test worker] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [io.medgelabs.register.RegistrationControllerIntegrationTest]: class path resource [io/medgelabs/register/RegistrationControllerIntegrationTestContext.groovy] does not exist
+23:55:18.051 [Test worker] INFO org.springframework.test.context.support.AbstractContextLoader - Could not detect default resource locations for test class [io.medgelabs.register.RegistrationControllerIntegrationTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+23:55:18.052 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [io.medgelabs.register.RegistrationControllerIntegrationTest]: RegistrationControllerIntegrationTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+23:55:18.176 [Test worker] DEBUG org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider - Identified candidate component class: file [/Users/medge/code/starters/spring-services-starter/users/build/classes/java/main/io/medgelabs/Application.class]
+23:55:18.178 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration io.medgelabs.Application for test class io.medgelabs.register.RegistrationControllerIntegrationTest
+23:55:18.263 [Test worker] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper - @TestExecutionListeners is not present for class [io.medgelabs.register.RegistrationControllerIntegrationTest]: using defaults.
+23:55:18.263 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
+23:55:18.277 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@fbd415f, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@fc5a4db, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@3ed36c35, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@14b2ccc4, org.springframework.test.context.support.DirtiesContextTestExecutionListener@71e0c0b4, org.springframework.test.context.transaction.TransactionalTestExecutionListener@53a1412f, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@76363daa, org.springframework.test.context.event.EventPublishingTestExecutionListener@74600b44, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@372901c, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@5a830164, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@1d9fbcf3, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@6951be2f, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@7e343169]
+23:55:18.281 [Test worker] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [io.medgelabs.register.RegistrationControllerIntegrationTest]
+23:55:18.282 [Test worker] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [io.medgelabs.register.RegistrationControllerIntegrationTest]
+23:55:18.282 [Test worker] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [io.medgelabs.register.RegistrationControllerIntegrationTest]
+23:55:18.283 [Test worker] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [io.medgelabs.register.RegistrationControllerIntegrationTest]
+23:55:18.287 [Test worker] DEBUG org.springframework.test.context.support.AbstractDirtiesContextTestExecutionListener - Before test class: context [DefaultTestContext@45a724eb testClass = RegistrationControllerIntegrationTest, testInstance = [null], testMethod = [null], testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@3f87b3db testClass = RegistrationControllerIntegrationTest, locations = '{}', classes = '{class io.medgelabs.Application}', contextInitializerClasses = '[]', activeProfiles = '{dev}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@4b3fa0b3, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@3c31755b, [ImportsContextCustomizer@6521cb74 key = [org.springframework.boot.test.autoconfigure.web.servlet.MockMvcAutoConfiguration, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcWebClientAutoConfiguration, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcWebDriverAutoConfiguration, org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration, org.springframework.boot.autoconfigure.security.servlet.UserDetailsServiceAutoConfiguration, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcSecurityConfiguration]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@60343a6a, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@300bcee3, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@62ed8f14], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -> true]], class annotated with @DirtiesContext [false] with mode [null].
+23:55:18.288 [Test worker] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [io.medgelabs.register.RegistrationControllerIntegrationTest]
+23:55:18.289 [Test worker] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [io.medgelabs.register.RegistrationControllerIntegrationTest]
+23:55:18.311 [Test worker] DEBUG org.springframework.test.context.support.TestPropertySourceUtils - Adding inlined properties to environment: {spring.jmx.enabled=false, org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true, server.port=-1}
+2019-12-07 23:55:23.757  INFO 5495 --- [    Test worker] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-12-07 23:55:23.930  INFO 5495 --- [    Test worker] .r.RegistrationControllerIntegrationTest : The following profiles are active: dev
+2019-12-07 23:55:24.829  INFO 5495 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-12-07 23:55:24.905  INFO 5495 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 66ms. Found 1 repository interfaces.
+2019-12-07 23:55:25.151  INFO 5495 --- [    Test worker] o.s.cloud.context.scope.GenericScope     : BeanFactory id=0ece8b73-67d9-320e-a97d-5bc9ded5ef5d
+2019-12-07 23:55:25.381  INFO 5495 --- [    Test worker] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-12-07 23:55:25.434  INFO 5495 --- [    Test worker] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-12-07 23:55:25.641  INFO 5495 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2019-12-07 23:55:25.805  INFO 5495 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2019-12-07 23:55:25.894  INFO 5495 --- [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2019-12-07 23:55:25.980  INFO 5495 --- [    Test worker] org.hibernate.Version                    : HHH000412: Hibernate Core {5.4.8.Final}
+2019-12-07 23:55:26.116  INFO 5495 --- [    Test worker] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2019-12-07 23:55:26.231  INFO 5495 --- [    Test worker] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2019-12-07 23:55:26.877  INFO 5495 --- [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2019-12-07 23:55:26.883  INFO 5495 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2019-12-07 23:55:26.956  WARN 5495 --- [    Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2019-12-07 23:55:27.105  WARN 5495 --- [    Test worker] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2019-12-07 23:55:27.105  INFO 5495 --- [    Test worker] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2019-12-07 23:55:27.119  INFO 5495 --- [    Test worker] c.netflix.config.DynamicPropertyFactory  : DynamicPropertyFactory is initialized with configuration sources: com.netflix.config.ConcurrentCompositeConfiguration@4fc14825
+2019-12-07 23:55:27.985  INFO 5495 --- [    Test worker] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 3 endpoint(s) beneath base path '/actuator'
+2019-12-07 23:55:28.175  INFO 5495 --- [    Test worker] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/apis] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2019-12-07 23:55:28.313  WARN 5495 --- [    Test worker] o.s.c.n.a.ArchaiusAutoConfiguration      : No spring.application.name found, defaulting to 'application'
+2019-12-07 23:55:28.314  WARN 5495 --- [    Test worker] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2019-12-07 23:55:28.314  INFO 5495 --- [    Test worker] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2019-12-07 23:55:28.495  INFO 5495 --- [    Test worker] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-12-07 23:55:28.867  INFO 5495 --- [    Test worker] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@50bf5365, org.springframework.security.web.context.SecurityContextPersistenceFilter@4682463e, org.springframework.security.web.header.HeaderWriterFilter@18188d71, org.springframework.security.web.authentication.logout.LogoutFilter@fa24416, io.medgelabs.jwt.JwtValidationFilter@5c602713, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@ebdd3e7, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@b45ffd, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@7fa6ee0c, org.springframework.security.web.session.SessionManagementFilter@44624f96, org.springframework.security.web.access.ExceptionTranslationFilter@6204730f, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@6e87a869]
+2019-12-07 23:55:28.977  INFO 5495 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2019-12-07 23:55:28.977  INFO 5495 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2019-12-07 23:55:28.990  INFO 5495 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 13 ms
+2019-12-07 23:55:29.063  INFO 5495 --- [    Test worker] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2019-12-07 23:55:29.085  INFO 5495 --- [    Test worker] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2019-12-07 23:55:29.106  INFO 5495 --- [    Test worker] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2019-12-07 23:55:29.228  INFO 5495 --- [    Test worker] .r.RegistrationControllerIntegrationTest : Started RegistrationControllerIntegrationTest in 10.906 seconds (JVM running for 11.89)
+
+MockHttpServletRequest:
+      HTTP Method = POST
+      Request URI = /register
+       Parameters = {}
+          Headers = [Content-Type:"application/json;charset=UTF-8"]
+             Body = {"username":"testUser1234","password":"abcdef12345"}
+    Session Attrs = {}
+
+Handler:
+             Type = io.medgelabs.register.RegistrationController
+           Method = io.medgelabs.register.RegistrationController#register(RegistrationRequest)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 404
+    Error message = null
+          Headers = [X-Content-Type-Options:"nosniff", X-XSS-Protection:"1; mode=block", Cache-Control:"no-cache, no-store, max-age=0, must-revalidate", Pragma:"no-cache", Expires:"0", X-Frame-Options:"DENY"]
+     Content type = null
+             Body = 
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+2019-12-07 23:55:29.524  WARN 5495 --- [    Test worker] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.bind.MethodArgumentNotValidException: Validation failed for argument [0] in public org.springframework.http.ResponseEntity<?> io.medgelabs.register.RegistrationController.register(io.medgelabs.register.RegistrationController$RegistrationRequest) with 2 errors: [Field error in object 'registrationRequest' on field 'username': rejected value [s]; codes [Pattern.registrationRequest.username,Pattern.username,Pattern.java.lang.String,Pattern]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [registrationRequest.username,username]; arguments []; default message [username],[Ljavax.validation.constraints.Pattern$Flag;@6b703281,^[a-zA-Z0-9]{4,64}$]; default message [must match "^[a-zA-Z0-9]{4,64}$"]] [Field error in object 'registrationRequest' on field 'username': rejected value [s]; codes [Size.registrationRequest.username,Size.username,Size.java.lang.String,Size]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [registrationRequest.username,username]; arguments []; default message [username],64,4]; default message [size must be between 4 and 64]] ]
+
+MockHttpServletRequest:
+      HTTP Method = POST
+      Request URI = /register
+       Parameters = {}
+          Headers = [Content-Type:"application/json;charset=UTF-8"]
+             Body = {"username":"s","password":"abcdef12345"}
+    Session Attrs = {}
+
+Handler:
+             Type = io.medgelabs.register.RegistrationController
+           Method = io.medgelabs.register.RegistrationController#register(RegistrationRequest)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = org.springframework.web.bind.MethodArgumentNotValidException
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 400
+    Error message = null
+          Headers = [X-Content-Type-Options:"nosniff", X-XSS-Protection:"1; mode=block", Cache-Control:"no-cache, no-store, max-age=0, must-revalidate", Pragma:"no-cache", Expires:"0", X-Frame-Options:"DENY"]
+     Content type = null
+             Body = 
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+
+MockHttpServletRequest:
+      HTTP Method = POST
+      Request URI = /register
+       Parameters = {}
+          Headers = [Content-Type:"application/json;charset=UTF-8"]
+             Body = {"username":"s","password":"abcdef12345"}
+    Session Attrs = {}
+
+Handler:
+             Type = io.medgelabs.register.RegistrationController
+           Method = io.medgelabs.register.RegistrationController#register(RegistrationRequest)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = org.springframework.web.bind.MethodArgumentNotValidException
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 400
+    Error message = null
+          Headers = [X-Content-Type-Options:"nosniff", X-XSS-Protection:"1; mode=block", Cache-Control:"no-cache, no-store, max-age=0, must-revalidate", Pragma:"no-cache", Expires:"0", X-Frame-Options:"DENY"]
+     Content type = null
+             Body = 
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

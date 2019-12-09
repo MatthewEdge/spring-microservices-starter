@@ -1,0 +1,47 @@
+# Requires the {{IMAGE_URL}} placeholder be replaced
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: kibana
+  # annotations:
+    # service.beta.kubernetes.io/aws-load-balancer-ssl-cert: {{ELB_SSL_CERT_ARN}}
+    # service.beta.kubernetes.io/aws-load-balancer-extra-security-groups: {{ELB_SECURITY_GROUP}}
+spec:
+  selector:
+    name: kibana
+  type: LoadBalancer
+  loadBalancerSourceRanges:
+    - TODO
+  ports:
+    - name: http
+      port: 80
+      targetPort: 5601
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kibana
+  labels:
+    name: kibana
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      name: kibana
+  template:
+    metadata:
+      labels:
+        name: kibana
+    spec:
+      containers:
+        - name: kibana
+          image: {{IMAGE_URL}}
+          imagePullPolicy: Always
+          resources:
+            requests:
+              memory: 512Mi
+            limits:
+              memory: 1Gi
+          ports:
+            - containerPort: 5601

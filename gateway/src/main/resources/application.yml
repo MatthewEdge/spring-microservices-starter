@@ -1,0 +1,57 @@
+jwt:
+  issuer: "Medgelabs"
+  secret: ${JWT_SECRET}
+
+logging:
+  level:
+    org.springframework.cloud.netflix.zuul: INFO
+
+zuul:
+  routes:
+    users:
+      sensitiveHeaders:
+      path: /v1/users/**
+      serviceId: users
+      stripPrefix: true
+
+# Hook into Kubernetes Load Balancing
+users.ribbon.listOfServers: ${USER_SERVICE_URL}
+
+# Disable Eureka integration in favor of Kubernetes
+ribbon:
+  eureka:
+    enabled: false
+
+# OpenFeign configuration
+feign:
+  hystrix.enabled: true
+
+spring:
+  main.banner-mode: off
+  logging.level:
+    org.springframework: ERROR
+
+# Actuator
+management:
+  endpoint:
+    metrics:
+      enabled: true
+    prometheus:
+      enabled: true
+  endpoints:
+    web:
+      exposure.include: "info,health,prometheus"
+  metrics:
+    export:
+      prometheus:
+        enabled: true
+
+# Swagger
+springfox.documentation.swagger.v2.path: /apis
+
+---
+spring.profiles: dev
+
+spring:
+  logging.level:
+    org.springframework: INFO

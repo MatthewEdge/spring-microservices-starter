@@ -1,0 +1,57 @@
+# Requires the {{IMAGE_URL}} placeholder be replaced
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: logstash
+  # annotations:
+    # service.beta.kubernetes.io/aws-load-balancer-ssl-cert: {{ELB_SSL_CERT_ARN}}
+    # service.beta.kubernetes.io/aws-load-balancer-extra-security-groups: {{ELB_SECURITY_GROUP_ID}}
+spec:
+  selector:
+    name: logstash
+  # type: LoadBalancer
+  # loadBalancerSourceRanges:
+  #   - TODO
+  ports:
+    - name: http
+      port: 5000
+      targetPort: 5000
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: logstash
+  labels:
+    name: logstash
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      name: logstash
+  template:
+    metadata:
+      labels:
+        name: logstash
+    spec:
+      containers:
+        - name: logstash
+          image: {{IMAGE_URL}}
+          imagePullPolicy: Always
+          resources:
+            requests:
+              memory: 512Mi
+            limits:
+              memory: 1Gi
+          ports:
+            - containerPort: 5000
+          env:
+            - name: LS_JAVA_OPTS
+              value: "-Xmx768m -Xms256m"
+            - name: ELASTIC_USERNAME
+              value: elastic
+            - name: ELASTIC_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: elasticsearch
+                  key: password
