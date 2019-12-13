@@ -38,7 +38,7 @@ configuration in SecurityConfig).
 
 Users are validated by the `users` service. This is where the user database is accessed. No other microservice accesses this database directly.
 
-### Tracing
+### TODO - Tracing
 
 Tracing is achieved through the JWT. A UUID is generated and attached to the JWT when issued. This UUID is attached to every log through the MDC 
 aspect.
