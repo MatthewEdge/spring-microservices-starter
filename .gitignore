@@ -1,6 +1,8 @@
 .DS_Store
 target/
 out/
+build/
+.gradle/
 .vscode/
 .settings/
 .idea/
