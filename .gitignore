@@ -3,6 +3,7 @@ target/
 out/
 build/
 .gradle/
+gradle/wrapper/
 .vscode/
 .settings/
 .idea/
